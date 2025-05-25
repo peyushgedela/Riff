@@ -6,6 +6,11 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent py-4 px-6 md:px-10 flex justify-between items-center backdrop-blur-sm bg-black/10">
       {/* Logo */}
       <div className="text-xl font-bold tracking-wider md:text-3xl">
+        <img
+          src="/logo.png"
+          alt="Logo"
+          className="inline-block h-8 md:h-10 mr-3 mb-1"
+        />
         <span className="text-amber-800">The Riff Project</span>
       </div>
 

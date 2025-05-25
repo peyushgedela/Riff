@@ -5,16 +5,9 @@ import { loadSlim } from "@tsparticles/slim";
 const ParticleBackground = () => {
   const [init, setInit] = useState(false);
 
-  // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
       await loadSlim(engine);
-      //await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
@@ -36,20 +29,23 @@ const ParticleBackground = () => {
         events: {
           onClick: {
             enable: true,
-            mode: "push",
+            mode: "repulse",
           },
           onHover: {
             enable: true,
-            mode: "repulse",
+            mode: "grab",
           },
         },
         modes: {
-          push: {
-            quantity: 4,
-          },
           repulse: {
             distance: 200,
             duration: 0.4,
+          },
+          grab: {
+            distance: 150,
+            links: {
+              opacity: 1,
+            },
           },
         },
       },
@@ -59,35 +55,36 @@ const ParticleBackground = () => {
         },
         links: {
           color: "#606c38",
-          distance: 150,
+          distance: 100,
           enable: true,
-          opacity: 0.5,
-          width: 1,
+          opacity: 0.6,
+          width: 1.5,
         },
         move: {
           direction: "none",
           enable: true,
           outModes: {
-            default: "bounce",
+            default: "out",
           },
-          random: false,
-          speed: 6,
+          random: true,
+          speed: 5,
           straight: false,
         },
         number: {
           density: {
             enable: true,
+            area: 800,
           },
           value: 80,
         },
         opacity: {
-          value: 0.5,
+          value: { min: 0.3, max: 0.7 },
         },
         shape: {
-          type: "circle",
+          type: "triangle", // Changed shape to "triangle" for variety
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 3, max: 9 }, // Adjusted size for a different look
         },
       },
       detectRetina: true,
