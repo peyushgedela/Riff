@@ -1,0 +1,30 @@
+/* src/index.css */
+@import "tailwindcss";
+
+body {
+  font-family: "Monospace", "Courier New", monospace; /* Monospace font for a techy feel */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0d1117; /* Match particle background for seamless feel */
+  color: #e0e0e0; /* Default light text color */
+}
+
+/* For a smoother scroll experience */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar (optional, for a more futuristic feel) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a202c; /* Dark track */
+}
+::-webkit-scrollbar-thumb {
+  background: #4a5568; /* Muted thumb */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #718096; /* Lighter on hover */
+}
