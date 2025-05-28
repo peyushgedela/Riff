@@ -1,12 +1,18 @@
+// src/App.jsx
 import React from "react";
-import Landing from "./pages/LandingPage";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import ProjectFilters from "./pages/ProjectFilers";
+import "./index.css";
 
 function App() {
   return (
-    <>
-      <Landing />
-      <div className="next-section">A project by Peyush Gedela.</div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/filters" element={<ProjectFilters />} />
+      </Routes>
+    </Router>
   );
 }
 

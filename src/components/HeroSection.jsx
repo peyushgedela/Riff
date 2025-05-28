@@ -1,11 +1,12 @@
 // src/components/HeroSection.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
-import { ChevronDown } from "lucide-react"; // Scroll indicator icon
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
   const [buttonStyle, setButtonStyle] = useState({});
   const buttonRef = useRef(null);
+  const navigate = useNavigate();
 
   const dynamicWords = ["Idea", "Side Project", "Inspiration"];
 
@@ -87,6 +88,9 @@ const HeroSection = () => {
       <button
         ref={buttonRef}
         style={buttonStyle}
+        onClick={() => {
+          navigate("/filters");
+        }}
         className="
           relative group px-10 py-4 md:px-26 md:py-5
           bg-lime-950 text-white font-semibold text-lg md:text-xl
@@ -97,8 +101,6 @@ const HeroSection = () => {
         // The rainbow backlight will be an ::after pseudo-element
       >
         <span className="relative z-10">Let's Go</span>
-        {/* Rainbow backlight effect - more complex to do purely in Tailwind inline for dynamic tracking */}
-        {/* We'll use pseudo-elements and hover state for the rainbow pulse */}
         <div
           className="
             absolute -inset-0.5 rounded-lg
