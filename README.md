@@ -1,5 +1,5 @@
 # The Riff Project
 
-It is built to find the next inspiration.
+## Built to Inspire.
 
 Peyush Gedela - 2025
