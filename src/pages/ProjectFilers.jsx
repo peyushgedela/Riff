@@ -1,8 +1,7 @@
 // src/components/ProjectFiltersPage.jsx
 import React, { useState, useEffect } from "react";
-import { X, Filter, RotateCcw } from "lucide-react"; // Icons
+import { X, Filter, RotateCcw } from "lucide-react";
 import Navbar from "../components/Navbar";
-import ParticleBackground from "../components/ParticleBackground";
 
 // Re-usable Chip component (same as before)
 const Chip = ({ label, isSelected, onSelect, type = "checkbox", value }) => {

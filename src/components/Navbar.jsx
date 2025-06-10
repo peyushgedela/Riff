@@ -1,9 +1,6 @@
-// src/components/Navbar.jsx
-import React from "react";
-
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent py-4 px-6 md:px-10 flex justify-between items-center backdrop-blur-sm bg-black/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent py-4 px-6 md:px-10 flex justify-between items-center backdrop-blur-sm">
       <a href="/">
         {/* Logo */}
         <div className="text-xl font-bold tracking-wider md:text-3xl">
